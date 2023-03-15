@@ -14,7 +14,7 @@ export class MovieComponent {
 
   @Input() movie: IMovie
   genre: string
-  icon: string = 'favorite_outline'
+  icon: string
 
   constructor(
     public dialog: MatDialog,
@@ -34,9 +34,6 @@ export class MovieComponent {
   
   ngOnInit(): void {
     this.genre = this.moviesService.makeGenreString(this.movie);
-
-    if (this.moviesService.isBest(this.movie)) {
-      this.icon = 'favorite';
-    }
+    this.icon = this.moviesService.isBest(this.movie) ? 'favorite' : 'favorite_outline';
   }
 }
