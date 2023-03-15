@@ -1,0 +1,63 @@
+@import 'vars';
+
+.dialog {
+  width: rem(756);
+  height: rem(255);
+  display: flex;
+  justify-content: space-between;
+  padding: rem(15) rem(20);
+  border-radius: rem(10);
+  // .dialog__image
+  &__image {
+    max-width: rem(150);
+    height: rem(225);
+    position: relative;
+    border-radius: rem(5);
+    margin-bottom: rem(10);
+    overflow: hidden;
+    flex: 1 0;
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+  // .dialog__body
+  &__body {
+    flex: 1 0;
+    padding-left: rem(20);
+    display: flex;
+    flex-direction: column;
+    h2 {
+      margin-bottom: rem(10);
+      font-weight: 600;
+      font-size: rem(20);
+      padding: 0;
+    }
+    mat-dialog-actions {
+      align-self: flex-end;
+      margin-top: auto;
+      padding: 0;
+      button.defBest {
+        color: $blue;
+      }
+      button[mat-dialog-close],
+      button.remBest {
+        color: $red;
+      }
+      button{
+        margin-left: 20px;
+      }
+    }
+  }
+  // .dialog__genre
+  &__genre {
+    margin-bottom: rem(10);
+  }
+  // .dialog__year
+  &__year {
+    margin-bottom: rem(10);
+  }
+}

@@ -1,0 +1,30 @@
+<div class="dialog">
+    <div class="dialog__image">
+        <img mat-card-image src="app/images/{{movie.id}}.jpeg" alt="movie poster">
+    </div>
+    <div class="dialog__body">
+        <h2>
+            {{ movie.name }}
+        </h2>
+        <h6 class="dialog__genre">
+            {{ genre }}
+        </h6>
+        <h6 class="dialog__year">
+            {{ movie.year | date: 'yyyy' }}
+        </h6>
+        <p>
+            {{ movie.description }}
+        </p>
+        <mat-dialog-actions>
+            <button *ngIf="!isBest" class="defBest" mat-button (click)="moviesService.onMovieLike(movie.id, $event)">
+                Выбрать лучшим фильмом
+            </button>
+            <button *ngIf="isBest" class="remBest" mat-button (click)="moviesService.onMovieLike(movie.id, $event)">
+                Удалить из лучших фильмов
+            </button>
+            <button mat-dialog-close mat-button (click)="close()">
+                Закрыть
+            </button>
+        </mat-dialog-actions>
+    </div>
+</div>

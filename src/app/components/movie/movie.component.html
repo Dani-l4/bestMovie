@@ -1,0 +1,19 @@
+<mat-card class="movie" (click)="openDialog()">
+  <div class="movie__image">
+    <img mat-card-image src="app/images/{{movie.id}}.jpeg" alt="movie poster">
+  </div>
+  <mat-card-content>
+    <h4 class="movie__name">
+      {{ movie.name }}
+    </h4>
+    <h6 class="movie__genre">
+      {{ genre }}
+    </h6>
+    <h6 class="movie__year">
+      {{ movie.year | date: 'yyyy' }}
+    </h6>
+    <button mat-icon-button (click)="moviesService.onMovieLike(movie.id, $event)" class="movie__icon">
+      <mat-icon>{{ icon }}</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>
