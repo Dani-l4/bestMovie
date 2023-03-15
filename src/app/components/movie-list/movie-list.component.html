@@ -1,0 +1,10 @@
+<div class="movie-list">
+  <h2 class="movie-list__title">Популярные фильмы</h2>
+  <div class="movie-list__inner">
+    <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
+  </div>
+  <!-- ngIf localStorage.bestMovie -->
+  <h2 class="movie-list__title">
+    Самый лучший фильм
+  </h2>
+</div>

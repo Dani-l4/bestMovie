@@ -1,2 +1,18 @@
+@use 'sass:math';
+
 $dark: #1D1838;
 $black: #000000;
+$bg: #F4F4F4;
+
+@function prc($pxOne, $pxTwo){
+  $result: math.div($pxOne, $pxTwo) * 100%;
+  @return $result;
+}
+@function rem($px){
+  $result: math.div($px,16) + rem;
+  @return $result;
+}
+@function em($px, $px2){
+  $result: math.div($px, $px2) + em;
+  @return $result;
+}

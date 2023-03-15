@@ -1,0 +1,17 @@
+<div class="movie">
+  <div class="movie__image">
+    <img src="app/images/{{movie.id}}.jpeg" alt="movie poster">
+  </div>
+  <h4 class="movie__name">
+    {{ movie.name }}
+  </h4>
+  <h6 class="movie__genre">
+    {{ genre }}
+  </h6>
+  <h6 class="movie__year">
+    {{ movie.year }}
+  </h6>
+  <button (click)="chooseFavorite('favorite')" class="movie__icon">
+    <mat-icon>{{ icon }}</mat-icon>
+  </button>
+</div>
