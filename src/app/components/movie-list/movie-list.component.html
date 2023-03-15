@@ -1,10 +1,14 @@
 <div class="movie-list">
   <h2 class="movie-list__title">Популярные фильмы</h2>
-  <div class="movie-list__inner">
-    <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
+  <mat-grid-list cols="7" rowHeight="400" gutterSize="15">
+    <mat-grid-tile *ngFor="let movie of movies">
+      <app-movie [movie]="movie"></app-movie>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="movie-list__best-movie" *ngIf="!!bestMovie">
+    <h2 class="movie-list__title">
+      Самый лучший фильм
+    </h2>
+    <app-movie [movie]="bestMovie"></app-movie>
   </div>
-  <!-- ngIf localStorage.bestMovie -->
-  <h2 class="movie-list__title">
-    Самый лучший фильм
-  </h2>
 </div>

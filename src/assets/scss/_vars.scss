@@ -3,6 +3,8 @@
 $dark: #1D1838;
 $black: #000000;
 $bg: #F4F4F4;
+$blue: #3F51B5;
+$red: #FF4081;
 
 @function prc($pxOne, $pxTwo){
   $result: math.div($pxOne, $pxTwo) * 100%;
